@@ -29,7 +29,7 @@
 
 
 +class TreeMultiSet {
--tree
+-tree: Tree
 + add(item): bool
 + remove(item): None
 + contains(item): bool
