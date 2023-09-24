@@ -1,0 +1,73 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+'The red square indicates it's a private attribute'
+
++Abstract class MultiSet {
++ add(item): bool
++ remove(item): None
++ contains(item): bool
++ is_empty(): bool
++ count(item): int
++ size(): int
+}
+
++class Tree {
+-root: Optional[Any]
+-subtrees: list[Tree]
++ is_empty(): bool
++ __len__(): int
++ count(item): int
++ __str__(): str
++ __contains__(item): bool
++ delete_item(item): bool
++ insert(item): None
+
+
+}
+
+
++class TreeMultiSet {
+-tree
++ add(item): bool
++ remove(item): None
++ contains(item): bool
++ is_empty(): bool
++ count(item): int
++ size(): int
+}
+
++class ArrayListMultiSet {
+-list: list
++ add(item): bool
++ remove(item): None
++ contains(item): bool
++ is_empty(): bool
++ count(item): int
++ size(): int
+}
+
++class LinkedListMultiSet {
+-front: _Node
+-size: int
++ add(item): bool
++ remove(item): None
++ contains(item): bool
++ is_empty(): bool
++ count(item): int
++ size(): int
+}
+
+-class Node {
++ item: Any
++ next: _Node | None
+}
+
+MultiSet <|- LinkedListMultiSet
+MultiSet <|- ArrayListMultiSet
+MultiSet <|- TreeMultiSet
+LinkedListMultiSet *-- Node
+TreeMultiSet *-- Tree
+@enduml
+
